@@ -1,13 +1,12 @@
 package tech.ada.challenge.StatusCartao.entidades;
 
 import lombok.Data;
-
 import javax.persistence.*;
 
 /***
  * create table empresa_transportadora (
  * bin varchar (6) not null, -- 6 primeiros números do cartão
- * tem_AR boolean -- COMO USA BOOLEAN NO SQL?
+ * tem_AR bit default 0 -- COMO USA BOOLEAN NO SQL?
  * ) -- QUEM É A ID DA TRANSPORTADORA?
  */
 
@@ -23,7 +22,6 @@ public class Transportadora {
     //quem é o ID da transportadora?
     @Column(nullable = false)
     private String bin;
-
     @Column(name = "tem_AR", nullable = false)
     private boolean temAr; // tem que estar preenchido verdadeiro ou falso, não pode ser nulo!
 

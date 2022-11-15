@@ -5,7 +5,6 @@ import tech.ada.challenge.StatusCartao.resposta.RespostaCliente;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-
 @Service
 public class ListarClienteServico {
     public List<RespostaCliente> executar() {
@@ -17,4 +16,5 @@ public class ListarClienteServico {
         }
         return respostaClientes;
     }
+
 }

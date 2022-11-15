@@ -1,4 +1,4 @@
-package tech.ada.challenge.StatusCartao.controller;
+package tech.ada.challenge.StatusCartao.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -8,27 +8,15 @@ import tech.ada.challenge.StatusCartao.requisicao.RequisicaoCartao;
 import tech.ada.challenge.StatusCartao.requisicao.RequisicaoCartaoPatch;
 import tech.ada.challenge.StatusCartao.resposta.RespostaCartao;
 import tech.ada.challenge.StatusCartao.servico.*;
-
-
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tech.ada.challenge.StatusCartao.requisicao.RequisicaoCliente;
-import tech.ada.challenge.StatusCartao.requisicao.RequisicaoClientePatch;
-import tech.ada.challenge.StatusCartao.resposta.RespostaCliente;
-import tech.ada.challenge.StatusCartao.servico.IncluirClienteServico;
-
 import java.util.List;
-
-
     @RestController
     @RequestMapping("/v1/cliente")
     @RequiredArgsConstructor
     @Slf4j
 
     public class CartaoController {
-
         private final IncluirCartaoServico incluirCartaoServico;
         private final ConsultarCartaoServico consultarCartaoServico;
         private final ListarCartaoServico listarCartaoServico;

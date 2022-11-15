@@ -1,12 +1,9 @@
 package tech.ada.challenge.StatusCartao.requisicao;
 
 import lombok.Data;
-
 import java.time.LocalDate;
-
 @Data
 public class RequisicaoCartaoPatch {
-
     private String numeroCartao;
     private String statusCartao; //(ativo/cancelado)
     private LocalDate dataEmissao;

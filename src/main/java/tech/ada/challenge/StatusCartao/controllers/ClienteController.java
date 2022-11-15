@@ -1,28 +1,29 @@
-package tech.ada.challenge.StatusCartao.controller;
+package tech.ada.challenge.StatusCartao.controllers;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import tech.ada.challenge.StatusCartao.requisicao.RequisicaoCliente;
-import tech.ada.challenge.StatusCartao.requisicao.RequisicaoClientePatch;
 import tech.ada.challenge.StatusCartao.resposta.RespostaCliente;
 import tech.ada.challenge.StatusCartao.servico.ConsultarClienteServico;
 import tech.ada.challenge.StatusCartao.servico.IncluirClienteServico;
 import tech.ada.challenge.StatusCartao.servico.ListarClienteServico;
 
 import java.util.List;
-
 @RestController
 @RequestMapping("/v1/cliente")
 @RequiredArgsConstructor
 @Slf4j
 
 public class ClienteController {
-
     private final IncluirClienteServico incluirClienteServico;
     private final ConsultarClienteServico consultarClienteServico;
     private final ListarClienteServico listarClienteServico;
+
+//    private final RemoverCliente removerCliente;
+//
+//    private final AlterarCliente alterarCliente;
 
     //http://localhost:8080/v1/cliente
     @PostMapping(path = "", produces = "application/json")
@@ -40,21 +41,21 @@ public class ClienteController {
     }
 
     //http://localhost:8080/v1/cliente/<identificador>
-    @DeleteMapping(path = "/{identificador}")
-    public RespostaCliente removerCliente(@PathVariable("identificador") String identificador){
-        return new RespostaCliente();
-    }
-
-    //http://localhost:8080/v1/cliente/<identificador>
-    @PatchMapping(path = "/{identificador}")
-    public RespostaCliente atualizarCliente(@RequestBody RequisicaoClientePatch clientePatch,
-                                            @PathVariable("identificador") String identificador){
-        return new RespostaCliente();
-    }
+//    @DeleteMapping(path = "/{identificador}")
+//    public RespostaCliente removerCliente(@PathVariable("identificador") String identificador){
+//        return removerCliente.executar(identificador);
+//    }
+//
+//    //http://localhost:8080/v1/cliente/<identificador>
+//    @PatchMapping(path = "/{identificador}")
+//    public RespostaCliente atualizarCliente(@RequestBody RequisicaoClientePatch clientePatch,
+//                                            @PathVariable("identificador") String identificador){
+//        return alterarCliente.executar(clientePatch, identificador);
+//    }
 
     //http://localhost:8080/v1/cliente
     @GetMapping (path = "")
-    public List<RespostaCliente> listarClientes(){
+    public List<RespostaCliente> listarClientes() {
         return listarClienteServico.executar();
         }
 

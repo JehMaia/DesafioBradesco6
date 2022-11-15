@@ -7,7 +7,6 @@ import java.util.UUID;
 
 @Service
 public class ConsultarClienteServico {
-
     public RespostaCliente executar(String identificador) {
         RespostaCliente respostaCliente =  new RespostaCliente();
         respostaCliente.setIdentificador(UUID.randomUUID().toString());
