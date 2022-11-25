@@ -32,8 +32,14 @@ public class Cliente {
     @OneToMany
     @JoinColumn(name = "id_endereco")
     private List<Endereco> enderecoList; // o endereço com essa ID pertence somente a esse cliente
-    @ManyToMany
-    @JoinColumn(name = "id_conta")
+
+    //Excluido por Jessica, conforme mentoria
+    //@ManyToMany
+    //@JoinColumn(name = "id_conta")
+
+    //Inserido por Jessica, conforme mentoria
+    @ManyToMany(mappedBy = "cliente")
+
     private List<Conta> contaList; // a conta com essa ID pode pertencer a mais de um cliente (conta conjunta)
     @OneToMany
     @JoinColumn(name = "numero_cartao")

@@ -41,9 +41,21 @@ public class Conta {
     private String tipoConta;
     @Column(name = "status_conta", nullable = false)
     private String statusConta;
+
+    //excluido  por Jessica conforme mentoria
+    //@ManyToMany
+   // @JoinColumn (name = "cpf")
+    //private Cliente cliente; // a conta com essa ID pode pertencer a mais de um cliente (conta conjunta)
+
+    //incluso por Jessica conforme mentoria
     @ManyToMany
-    @JoinColumn (name = "cpf")
-    private Cliente cliente; // a conta com essa ID pode pertencer a mais de um cliente (conta conjunta)
+    @JoinTable (name = "Conta_Cliente",
+    joinColumns =
+    @JoinColumn (name = "id_conta", referencedColumnName = "id_conta"),
+     inverseJoinColumns =
+     @JoinColumn (name = "Cpf", referencedColumnName = "Cpf")
+
+    )
     @OneToMany
     @JoinColumn(name = "numero_cartao")
     private List<Cartao> cartaoList; // o cartão com essa numeração pertence somente a essa conta
