@@ -56,7 +56,6 @@ public class Cartao {
     @JoinColumn (name = "cpf")
     private Cliente cliente; // um cliente pode ter muitos cartões
 
-    //acrescentados por Jessica orientada na mentoria
     @Column (name = "tem_AR", nullable = false)
     private boolean temAr;
 

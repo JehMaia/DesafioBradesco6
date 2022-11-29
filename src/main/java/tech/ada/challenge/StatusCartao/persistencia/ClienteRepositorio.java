@@ -10,18 +10,10 @@ import java.util.Optional;
 @Repository
 public interface ClienteRepositorio extends JpaRepository <Cliente, String>{
 
-    //retirado por Jessica, conforme mentoria
-   // @Query("Select c FROM Cliente c inner join c.enderecoList Where c.identificador = :identificador")
-   // Optional<Cliente> findIdentificador(@Param("identificador") String identificador);
-   // Optional<Cliente> findByIdentificador(String identificador);
 
-    //Incluso por Jessica, conforme mentoria
     @Query("Select c FROM Cliente c inner join c.enderecoList Where c.cpf = identificador")
     Optional<Cliente> findCpf (@Param("identificador") String identificador);
     Optional<Cliente> findByCpf (String identificador);
-
-    //modificado por Jessica, mediante mentoria
-    //@Modifying Long deleteByIdentificador(String identificador);
 
     @Modifying Long deleteByCpf (String identificador);//Jessica mediante mentoria
 

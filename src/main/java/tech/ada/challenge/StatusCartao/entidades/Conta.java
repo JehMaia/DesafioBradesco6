@@ -42,12 +42,6 @@ public class Conta {
     @Column(name = "status_conta", nullable = false)
     private String statusConta;
 
-    //excluido  por Jessica conforme mentoria
-    //@ManyToMany
-   // @JoinColumn (name = "cpf")
-    //private Cliente cliente; // a conta com essa ID pode pertencer a mais de um cliente (conta conjunta)
-
-    //incluso por Jessica conforme mentoria
     @ManyToMany
     @JoinTable (name = "Conta_Cliente",
     joinColumns =

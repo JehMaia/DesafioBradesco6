@@ -30,9 +30,6 @@ public class AvisoRecebimento {
     private Cartao cartao;
 
 }
-    // Apagado por Jessica
-    //@OneToOne
-    //@JoinColumn(name = "numero_cartao")
-    //private List<Cartao> cartaoList; // um cartão pertence a uma AR
+
 
 
